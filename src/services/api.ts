@@ -8,7 +8,6 @@ export const fetchEmployees = async (): Promise<Employee[]> => {
     if (!response.ok) throw new Error('Failed to fetch employees');
     const data = await response.json();
     
-    // Transform the data to match our Employee interface
     return data.map((user: any) => ({
       id: user.id,
       name: user.name,
